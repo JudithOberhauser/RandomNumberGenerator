@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
         val seekBar = findViewById<SeekBar>(R.id.seekBar)
 
+        // the pool of numbers to choose from should have at least two numbers, so I need to add 2 to the seekBar.progress
+        // the value should always be between 1 and the maximum selected with the seekBar, so I need to add 1 after randomising
         generatorButton.setOnClickListener {
             val rand = java.util.Random().nextInt(seekBar.progress+2)+1
             resultTextView.text = rand.toString()
